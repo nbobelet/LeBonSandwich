@@ -7,8 +7,8 @@ services:
       - VHOST_HOSTNAME=api.lbs.local
       - VHOST_DOCROOT=/var/www/api
     ports:
-      - "10080:80"
-      - "10443:443"
+      - "10880:80"
+      - "10843:443"
 #    env_file:
  #     - ./webenv.env
     volumes :
@@ -35,7 +35,7 @@ services:
       - MYSQL_PASSWORD=lbs
       - MYSQL_DATABASE=lbs
     ports:
-      - "3603:3306"
+      - "3663:3306"
     volumes :
       - ./sql:/var/sql
 
@@ -43,7 +43,7 @@ services:
      image: adminer
      container_name: adminer.lbs.local
      ports:
-       - "8080:8080"
+       - "8090:8080"
      links:
        - mysql:db
 
